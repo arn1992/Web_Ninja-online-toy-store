@@ -7,162 +7,115 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="site-title">ToyStore</h1>
-                <nav class="main-nav">
-                    <button class="nav-toggle" aria-label="toggle navigation">
-                        <span class="hamburger"></span>
-                    </button>
-                    <ul class="nav-menu">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Best Sellers</a></li>
-                        <li><a href="#about-us">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#" class="cart-link"><span class="material-icons">shopping_cart</span> Cart</a></li>
-                    </ul>
-                </nav>
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="#">ToyStore</a>
             </div>
-        </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about_us">About Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cart-button">Cart</button>
+            </div>
+        </nav>
     </header>
 
     <main>
-        <section id="hero">
+        <section class="hero" id="home">
+            <div class="slideshow-container">
+                <div class="slide" style="background-image: url('image/background.jpg');"></div>
+                <div class="slide" style="background-image: url('image/background_1.jpg');"></div>
+                <div class="slide" style="background-image: url('image/background_2.jpg');"></div>
+            </div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
-                <h2>A World of Wonder, Crafted for Play</h2>
-                <p>Explore our exclusive collection of heirloom-quality toys, designed to inspire a lifetime of creativity.</p>
-                <a href="/products" class="cta-button">Discover the Collection</a>
+                <h1>Discover a World of Wonder</h1>
+                <p>Premium toys that inspire creativity and joy.</p>
+                <a href="#products" class="btn-primary">Shop Now</a>
             </div>
         </section>
 
-        <section id="featured-products" class="container section-padding">
-            <h2 class="section-title">Featured Toys</h2>
-            <div class="product-grid">
-                <!-- Product Card 1 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/400x400/D4AF37/2C2C2C?text=Toy+1" alt="Wooden Rainbow Stacker" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Wooden Rainbow Stacker</h3>
-                        <p class="product-price">$45.00</p>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-                <!-- Product Card 2 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/400x400/D4AF37/2C2C2C?text=Toy+2" alt="Plush Teddy Bear" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Classic Plush Teddy Bear</h3>
-                        <p class="product-price">$55.00</p>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-                <!-- Product Card 3 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/400x400/D4AF37/2C2C2C?text=Toy+3" alt="Building Blocks Set" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Maple Wood Building Blocks</h3>
-                        <p class="product-price">$70.00</p>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
-                <!-- Product Card 4 -->
-                <div class="product-card">
-                    <img src="https://placehold.co/400x400/D4AF37/2C2C2C?text=Toy+4" alt="Vintage Model Car" class="product-image">
-                    <div class="product-info">
-                        <h3 class="product-title">Vintage Model Car</h3>
-                        <p class="product-price">$65.00</p>
-                        <button class="add-to-cart-btn">Add to Cart</button>
-                    </div>
-                </div>
+        <section class="product-section" id="products">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Products are dynamically inserted by script.js -->
             </div>
         </section>
 
-        <section id="services" class="section-padding">
-            <div class="container">
-                <div class="services-grid">
-                    <div class="service-item">
-                        <span class="material-icons service-icon">local_shipping</span>
-                        <h3>Complimentary Express Delivery</h3>
-                        <p>Enjoy swift, complimentary shipping on all orders over $50, delivered with care to your doorstep.</p>
-                    </div>
-                    <div class="service-item">
-                        <span class="material-icons service-icon">star</span>
-                        <h3>Expertly Curated</h3>
-                        <p>Each piece in our collection is meticulously selected by child development experts for its exceptional quality and play value.</p>
-                    </div>
-                    <div class="service-item">
-                        <span class="material-icons service-icon">replay</span>
-                        <h3>Effortless Returns</h3>
-                        <p>Should your selection not be the perfect fit, we offer a simple and seamless return process for your convenience.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="container section-padding">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <blockquote>"The craftsmanship is truly exceptional. My children are endlessly engaged, and the delivery was remarkably swift. A wonderful experience."</blockquote>
-                    <cite>- Sarah P.</cite>
-                </div>
-                <div class="testimonial-card">
-                    <blockquote>"Finding the perfect birthday gift was a delight. The website is elegantly designed, and the curated collections made the choice both simple and special."</blockquote>
-                    <cite>- Mike D.</cite>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-us" class="container section-padding">
+        <section id="about_us" class="product-section">
             <h2 class="section-title">About Us</h2>
-            <div class="about-us-content">
-                <div class="about-us-item">
-                    <h3>Our Mission</h3>
-                    <p>Our online toy store is a one-stop destination for children’s toys, games, and educational products.</p>
-                </div>
-                <div class="about-us-item">
-                    <h3>Wide Range of Products</h3>
-                    <p>We offer a wide range of options for babies, toddlers, kids, and even collectors, including puzzles, board games, learning toys, building sets, outdoor play equipment, and creative arts and crafts.</p>
-                </div>
-                <div class="about-us-item">
-                    <h3>Our Promise</h3>
-                    <p>All products are carefully selected to ensure safety, durability, and developmental value.</p>
-                </div>
-                <div class="about-us-item">
-                    <h3>Stress-Free Shopping</h3>
-                    <p>The website is designed for ease of use, secure payment options, and fast delivery, making shopping stress-free for parents and fun for kids.</p>
-                </div>
-                <div class="about-us-item">
-                    <h3>An Exciting Experience</h3>
-                    <p>With seasonal collections, special promotions, and themed gift sets, we aim to make every purchase an exciting experience.</p>
-                </div>
+            <div class="about-content">
+                <p>Our online toy store is a one-stop destination for children’s toys, games, and educational products. We offer a wide range of options for babies, toddlers, kids, and even collectors, including puzzles, board games, learning toys, building sets, outdoor play equipment, and creative arts and crafts. All products are carefully selected to ensure safety, durability, and developmental value. The website is designed for ease of use, secure payment options, and fast delivery, making shopping stress-free for parents and fun for kids. With seasonal collections, special promotions, and themed gift sets, we aim to make every purchase an exciting experience.</p>
             </div>
         </section>
 
+        <section id="contact" class="product-section">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-details">
+                    <h3>Get In Touch</h3>
+                    <p><strong>Address:</strong> 303 Pinegreen Close NE, Calgary, AB T1Y 1W4</p>
+                    <p><strong>Phone:</strong> 613-252-4244</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=303+Pinegreen+Close+NE,+Calgary+AB+T1Y+1W4" class="btn-primary" target="_blank" rel="noopener noreferrer">View on Map</a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#about-us">About Us</a>
-                    <a href="#">Contact Us</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Track Order</a>
-                </div>
-                <p>&copy; 2024 ToyStore. All Rights Reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>About ToyStore</h4>
+                <p>Inspiring creativity and joy with a curated selection of premium toys for all ages. Quality and safety are our top priorities.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#about_us">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <p>Subscribe to our newsletter for the latest deals and new arrivals.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
             </div>
         </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ToyStore. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-btn" id="close-cart-button">&times;</button>
+        </div>
+        <div class="cart-body">
+            <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
