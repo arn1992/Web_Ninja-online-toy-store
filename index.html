@@ -7,113 +7,331 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header id="main-header">
-        <nav class="navbar">
-            <div class="nav-logo">
-                <a href="#">ToyStore</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about_us">About Us</a></li>
-            </ul>
-            <div class="nav-actions">
-                <button class="cart-btn" id="cart-button">Cart</button>
-            </div>
-        </nav>
+    <header>
+        <div class="container">
+            <div class="logo">Online Toy Store</div>
+            <nav>
+                <ul>
+                    <li><a href="#" id="home-link">Home</a></li>
+                    <li><a href="#" id="products-link">Products</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)">Categories <span class="arrow-down"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/category/action-figures">Action Figures</a></li>
+                            <li><a href="/category/dolls">Dolls & Accessories</a></li>
+                            <li><a href="/category/blocks">Building Blocks</a></li>
+                            <li><a href="/category/puzzles-games">Puzzles & Games</a></li>
+                            <li><a href="/category/educational">Educational Toys</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#about-us-section">About Us</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li class="cart-icon"><a href="#" id="cart-toggle">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="slideshow-container">
-                <div class="slide" style="background-image: url('image/background.jpg');"></div>
-                <div class="slide" style="background-image: url('image/background_1.jpg');"></div>
-                <div class="slide" style="background-image: url('image/background_2.jpg');"></div>
-            </div>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="slide active" style="background-image: url('image/background.jpg');"></div>
+            <div class="slide" style="background-image: url('image/background_1.jpg');"></div>
+            <div class="slide" style="background-image: url('image/background_2.jpg');"></div>
             <div class="hero-overlay"></div>
-            <div class="hero-content">
+            <div class="hero-content container">
                 <h1>Discover a World of Wonder</h1>
-                <p>Premium toys that inspire creativity and joy.</p>
-                <a href="#products" class="btn-primary">Shop Now</a>
+                <p>Quality toys that inspire creativity and joy in every child.</p>
+                <button class="cta-button">Shop New Arrivals</button>
             </div>
         </section>
 
-        <section class="product-section" id="products">
-            <h2 class="section-title">Featured Products</h2>
-            <div class="product-grid" id="product-grid">
-                <!-- Products are dynamically inserted by script.js -->
+        <!-- Best Sellers Section -->
+        <section class="best-sellers">
+            <div class="container">
+                <h2>Best Sellers</h2>
+                <div class="product-grid">
+                    <!-- Product Card 1 -->
+                    <div class="product-card" data-product-id="2" data-product-name="Barbie Dreamhouse" data-price="199.99">
+                        <img src="https://cdn11.bigcommerce.com/s-c9a80/images/stencil/original/products/18164/68717/MGBX_Barbie_the_Movie_Dreamhouse_MATLHPH26_pic_3__14483.1700861902.jpg" alt="Barbie Dreamhouse">
+                        <h3>Barbie Dreamhouse</h3>
+                        <p class="product-description">The iconic dollhouse with three stories, eight rooms, and a working elevator.</p>
+                        <p class="price">$199.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 2 -->
+                    <div class="product-card" data-product-id="3" data-product-name="Monopoly Classic" data-price="19.99">
+                        <img src="https://www.toysrus.ca/dw/image/v2/BDFX_PRD/on/demandware.static/-/Sites-toys-master-catalog/default/dw14f58dc9/images/F477C85B_6.jpg?sw=767&sh=767&sm=fit" alt="Monopoly Classic">
+                        <h3>Monopoly Classic</h3>
+                        <p class="product-description">The classic board game of property trading.</p>
+                        <p class="price">$19.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 3 -->
+                    <div class="product-card" data-product-id="4" data-product-name="Wooden Alphabet Blocks" data-price="24.99">
+                        <img src="https://letoyvan.com/cdn/shop/files/PL101-ABC-123-letter-number-counting-shape-alphabet-wooden-puzzle-toddler-educational-toy-gift-baby-phonetic-_1.jpg?v=1751370454&width=2048" alt="Wooden Alphabet Blocks">
+                        <h3>Wooden Alphabet Blocks</h3>
+                        <p class="product-description">50 solid wood blocks with letters, numbers, and pictures.</p>
+                        <p class="price">$24.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <!-- Product Card 4 -->
+                    <div class="product-card" data-product-id="1" data-product-name="Classic Brick Box" data-price="49.99">
+                        <img src="https://drive.google.com/uc?export=view&id=1BOE2c46OY6yDuL7b-MrHHem4Z8IEG-gj" alt="Classic Brick Box">
+                        <h3>Classic Brick Box</h3>
+                        <p class="product-description">A box of classic LEGO bricks for endless creativity.</p>
+                        <p class="price">$49.99</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="about_us" class="product-section">
-            <h2 class="section-title">About Us</h2>
-            <div class="about-content">
-                <p>Our online toy store is a one-stop destination for children’s toys, games, and educational products. We offer a wide range of options for babies, toddlers, kids, and even collectors, including puzzles, board games, learning toys, building sets, outdoor play equipment, and creative arts and crafts. All products are carefully selected to ensure safety, durability, and developmental value. The website is designed for ease of use, secure payment options, and fast delivery, making shopping stress-free for parents and fun for kids. With seasonal collections, special promotions, and themed gift sets, we aim to make every purchase an exciting experience.</p>
+        <!-- Our Promise Section -->
+        <section class="our-promise">
+            <div class="container promise-container">
+                <div class="promise-text">
+                    <h2>Our Promise</h2>
+                    <p>We are committed to providing the highest quality toys that are safe, durable, and designed to foster development. Every product is carefully selected to ensure it meets our rigorous standards for fun and educational value. Your child's happiness and growth are at the heart of everything we do.</p>
+                </div>
+                <div class="promise-image">
+                    <img src="https://media.istockphoto.com/id/1387451522/photo/businesswoman-handshake-and-business-people-successful-business-concept.jpg?s=612x612&w=0&k=20&c=HQ6IaTKYqG-x682TjjLyVCyd-DL0K3CPFmIxBnmUYsw=" alt="Our Promise">
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="product-section">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-content">
+        <!-- About Us Section -->
+        <section class="about-us" id="about-us-section">
+            <div class="container about-container">
+                <div class="about-image">
+                    <img src="image/educational_globe.jpg" alt="About Us">
+                </div>
+                <div class="about-text">
+                    <h2>About Our Store</h2>
+                    <p>Founded by parents with a passion for play, our toy store was born from a simple idea: to make it easy for families to find exceptional toys. We believe in the power of play to shape young minds, and we've dedicated ourselves to curating a collection that sparks imagination, encourages curiosity, and creates lasting memories.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact-section">
+            <div class="container contact-container">
                 <div class="contact-details">
-                    <h3>Get In Touch</h3>
-                    <p><strong>Address:</strong> 303 Pinegreen Close NE, Calgary, AB T1Y 1W4</p>
-                    <p><strong>Phone:</strong> 613-252-4244</p>
-                    <a href="https://www.google.com/maps/search/?api=1&query=303+Pinegreen+Close+NE,+Calgary+AB+T1Y+1W4" class="btn-primary" target="_blank" rel="noopener noreferrer">View on Map</a>
+                    <h2>Get In Touch</h2>
+                    <p>Have a question or need help finding the perfect toy? We're here to help! Reach out to us via phone, email, or visit us at our store location.</p>
+                    <div class="contact-info-item">
+                        <strong>Phone</strong>
+                        <p><a href="tel:613-252-4244">613-252-4244</a></p>
+                    </div>
+                    <div class="contact-info-item">
+                        <strong>Address</strong>
+                        <p>303 Pinegreen Close NE, Calgary, AB T1Y 1W4</p>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.998365107238!2d-113.9415416842446!3d51.10899297957168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5371647a6a520673%3A0x188f3a4b63965909!2s303%20Pinegreen%20Close%20NE%2C%20Calgary%2C%20AB%20T1Y%201W4!5e0!3m2!1sen!2sca!4v1620312943805!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-container">
+    <div id="products-page" style="display: none;">
+        <main>
+            <!-- Page Header Section -->
+            <section class="page-header" style="background-image: url('image/background.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <h1>Our Products</h1>
+                </div>
+            </section>
+
+            <!-- Products Display Section -->
+            <section class="products-page-section">
+                <div class="container">
+                    <!-- Filter and Sort Controls -->
+                    <div class="product-controls">
+                        <div class="filter-group">
+                            <label for="category-filter">Category</label>
+                            <select id="category-filter" name="category">
+                                <option value="all">All</option>
+                                <option value="1">Building Blocks</option>
+                                <option value="2">Dolls & Accessories</option>
+                                <option value="3">Puzzles & Games</option>
+                                <option value="4">Sports</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="brand-filter">Brand</label>
+                            <select id="brand-filter" name="brand">
+                                <option value="all">All</option>
+                                <option value="LEGO">LEGO</option>
+                                <option value="Mattel">Mattel</option>
+                                <option value="Hasbro">Hasbro</option>
+                                <option value="Melissa & Doug">Melissa & Doug</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-by">Sort By</label>
+                            <select id="sort-by" name="sort">
+                                <option value="default">Default</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div class="product-grid">
+                        <div class="product-card" data-product-id="1" data-product-name="Classic Brick Box" data-price="49.99" data-category="1" data-brand="LEGO">
+                            <img src="https://drive.google.com/uc?export=view&id=1BOE2c46OY6yDuL7b-MrHHem4Z8IEG-gj" alt="Classic Brick Box">
+                            <h3>Classic Brick Box</h3>
+                            <p class="product-description">A box of classic LEGO bricks for endless creativity.</p>
+                            <p class="price">$49.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card" data-product-id="2" data-product-name="Barbie Dreamhouse" data-price="199.99" data-category="2" data-brand="Mattel">
+                            <img src="https://cdn11.bigcommerce.com/s-c9a80/images/stencil/original/products/18164/68717/MGBX_Barbie_the_Movie_Dreamhouse_MATLHPH26_pic_3__14483.1700861902.jpg" alt="Barbie Dreamhouse">
+                            <h3>Barbie Dreamhouse</h3>
+                            <p class="product-description">The iconic dollhouse with three stories, eight rooms, and a working elevator.</p>
+                            <p class="price">$199.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card" data-product-id="3" data-product-name="Monopoly Classic" data-price="19.99" data-category="3" data-brand="Hasbro">
+                            <img src="https://www.toysrus.ca/dw/image/v2/BDFX_PRD/on/demandware.static/-/Sites-toys-master-catalog/default/dw14f58dc9/images/F477C85B_6.jpg?sw=767&sh=767&sm=fit" alt="Monopoly Classic">
+                            <h3>Monopoly Classic</h3>
+                            <p class="product-description">The classic board game of property trading.</p>
+                            <p class="price">$19.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card" data-product-id="4" data-product-name="Wooden Alphabet Blocks" data-price="24.99" data-category="3" data-brand="Melissa & Doug">
+                            <img src="https://letoyvan.com/cdn/shop/files/PL101-ABC-123-letter-number-counting-shape-alphabet-wooden-puzzle-toddler-educational-toy-gift-baby-phonetic-_1.jpg?v=1751370454&width=2048" alt="Wooden Alphabet Blocks">
+                            <h3>Wooden Alphabet Blocks</h3>
+                            <p class="product-description">50 solid wood blocks with letters, numbers, and pictures.</p>
+                            <p class="price">$24.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                        <div class="product-card" data-product-id="5" data-product-name="Soccer Ball" data-price="15.99" data-category="4" data-brand="Hasbro">
+                            <div class="placeholder-image"></div>
+                            <h3>Soccer Ball</h3>
+                            <p class="product-description">A durable, all-weather size 4 soccer ball.</p>
+                            <p class="price">$15.99</p>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="checkout-page">
+        <section class="checkout-section">
+            <div class="container checkout-container">
+                <div class="checkout-form">
+                    <h2>Shipping & Payment</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="full-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Shipping Address</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postal-code">Postal Code</label>
+                                <input type="text" id="postal-code" name="postal-code" required>
+                            </div>
+                        </div>
+                        <h2>Payment Details</h2>
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card-number" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiry-date">Expiry Date (MM/YY)</label>
+                                <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cvc">CVC</label>
+                                <input type="text" id="cvc" name="cvc" required>
+                            </div>
+                        </div>
+                        <p class="secure-payment-info">Your payment is secure and encrypted.</p>
+                        <button type="submit" class="pay-now-btn">Pay Now</button>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="summary-items-container" class="summary-items">
+                        <!-- Items will be populated by JS -->
+                    </div>
+                    <div id="summary-total-container">
+                        <!-- Totals will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container footer-container">
             <div class="footer-column">
-                <h4>About ToyStore</h4>
-                <p>Inspiring creativity and joy with a curated selection of premium toys for all ages. Quality and safety are our top priorities.</p>
+                <h3>Online Toy Store</h3>
+                <p>Inspiring the next generation of builders, dreamers, and creators.</p>
             </div>
             <div class="footer-column">
-                <h4>Quick Links</h4>
+                <h3>Quick Links</h3>
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#about_us">About Us</a></li>
+                    <li><a href="#about-us-section">About Us</a></li>
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Newsletter</h4>
-                <p>Subscribe to our newsletter for the latest deals and new arrivals.</p>
+                <h3>Newsletter</h3>
+                <p>Subscribe for updates and special offers.</p>
                 <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
+                    <input type="email" placeholder="Your email address">
                     <button type="submit">Subscribe</button>
                 </form>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 ToyStore. All Rights Reserved.</p>
+            <p>&copy; 2024 Online Toy Store. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Cart Drawer -->
     <div class="cart-overlay" id="cart-overlay"></div>
     <div class="cart-drawer" id="cart-drawer">
         <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-btn" id="close-cart-button">&times;</button>
+            <h2>Your Cart</h2>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
         </div>
-        <div class="cart-body">
-            <!-- Cart items will be dynamically inserted here -->
+        <div class="cart-body" id="cart-body">
+            <!-- Cart items will be injected here -->
         </div>
         <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>$0.00</span>
+            <div class="cart-subtotal">
+                <span>Subtotal</span>
+                <span id="cart-subtotal">$0.00</span>
             </div>
-            <button class="btn-primary checkout-btn">Proceed to Checkout</button>
+            <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
         </div>
     </div>
 
